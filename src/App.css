@@ -1,5 +1,11 @@
 .App {
   text-align: center;
+  background-image: url('https://m.media-amazon.com/images/I/71V21L1U9CL.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .App-logo {
@@ -36,3 +42,115 @@
     transform: rotate(360deg);
   }
 }
+
+.board {
+  width: 415px;
+  height: 415px;
+  border: 4px solid greenyellow;
+  margin: auto;
+  background-color: #08a635;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.square {
+  font-size: 30px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.square button{
+
+  width: 135px;
+  height: 135px;
+  background-color: #5fea2e;
+  font-size: 60px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.square button:hover {
+  background-color: #60d324;
+}
+
+.board-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1px;
+}
+
+.reset-button {
+  width: 205px;
+  height: 55px;
+  background-color: #ea922e;
+  font-size: 30px;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.reset-button:hover {
+  background-color: #e68224;
+}
+
+.winner {
+  font-size: 50px;
+  color: rgba(243, 242, 242, 0.87);
+  font-weight: bold;
+  margin-top: 30px;
+}
+
+.score {
+  font-size: 20px;
+  color: rgba(243, 242, 242, 0.87);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 350px;
+  height: 55px;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+.p1-win {
+  color: rgb(225, 141, 47);
+  margin-left: 10px;
+  border: 1px solid rgba(243, 242, 242, 0.87);
+  border-radius: 10px;
+  width: 100px;
+  height: 45px;
+  font-size: 35px;
+}
+
+.p2-win {
+  color: rgba(243, 242, 242, 0.87);
+  margin-right: 10px;
+  border: 1px solid rgb(225, 141, 47);
+  border-radius: 10px;
+  width: 100px;
+  height: 45px;
+  font-size: 35px;
+}
+
+.score button {
+  color: #e7060d;
+  margin-right: 5px;
+  width: 50px;
+  height: 45px;
+  font-size: 35px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+
+
