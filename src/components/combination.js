@@ -15,6 +15,9 @@ export const combination = (squares) => {
         if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
             return { winner: squares[a], combination: [a, b, c] };
         }
+        if (squares.every(cell => cell !== null)) {
+            return { winner: 'draw', combination: [] };
+        }
     }
 
     return null;

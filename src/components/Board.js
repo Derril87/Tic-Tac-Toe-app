@@ -16,10 +16,12 @@ const Board = ({board, handleClick, reset, winner}) => {
                     />
                 ))}
 
+                {winner && winner.combination.length > 0 && (
+                    <div className={`strike-line strike-${winner.combination.join('-')} ${winner.winner === 'X' ? 'strike-x' : 'strike-o'}`}></div>
+                )}
             </div>
 
             <button className='reset-button' onClick={reset}>Start again</button>
-
         </div>
     );
 };

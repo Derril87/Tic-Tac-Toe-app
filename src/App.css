@@ -52,6 +52,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
+  position: relative;
 }
 
 .square {
@@ -117,8 +118,7 @@
   border-radius: 10px;
   font-weight: bold;
   cursor: pointer;
-  margin: auto;
-  margin-bottom: 10px;
+  margin: 10px auto;
 }
 
 .p1-win {
@@ -152,5 +152,97 @@
   cursor: pointer;
 }
 
+.strike-line {
+  position: absolute;
+  height: 5px;
+  border-radius: 3px;
+  z-index: 5;
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
 
+.strike-0-1-2 {
+  top: 16.6%;
+  left: 0;
+  right: 0;
+}
+.strike-3-4-5 {
+  top: 50%;
+  left: 0;
+  right: 0;
+}
+.strike-6-7-8 {
+  top: 83.3%;
+  left: 0;
+  right: 0;
+}
 
+.strike-0-3-6 {
+  top: 0;
+  left: 16.6%;
+  width: 5px;
+  height: 100%;
+}
+.strike-1-4-7 {
+  top: 0;
+  left: 50%;
+  width: 5px;
+  height: 100%;
+}
+.strike-2-5-8 {
+  top: 0;
+  left: 83.3%;
+  width: 5px;
+  height: 100%;
+}
+
+.strike-0-4-8 {
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: red;
+  transform: rotate(45deg) scaleX(1.35);
+  transform-origin: center;
+  z-index: 5;
+}
+
+.strike-2-4-6 {
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: red;
+  transform: rotate(-45deg) scaleX(1.35);
+  transform-origin: center;
+  z-index: 5;
+}
+
+.strike-line {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  .strike-line {
+    box-shadow: 0 0 10px red, 0 0 20px red;
+    animation: glow 1s infinite alternate;
+  }
+
+  @keyframes glow {
+    from {
+      box-shadow: 0 0 5px red, 0 0 10px red;
+    }
+    to {
+      box-shadow: 0 0 15px red, 0 0 30px red;
+    }
+  }
+}
+
+.strike-x {
+  background: #1406e8;
+  box-shadow: 0 0 10px #1406e8, 0 0 20px #1406e8;
+  animation: glow-x 1s infinite alternate;
+}
+
+.strike-o {
+  background: #f40a06;
+  box-shadow: 0 0 10px #f40a06, 0 0 20px #f40a06;
+  animation: glow-o 1s infinite alternate;
+}

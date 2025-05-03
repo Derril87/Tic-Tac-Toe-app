@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import Board from "./Board";
 import {combination} from "./combination";
-import { GrPowerReset } from "react-icons/gr";
+import {GrPowerReset} from "react-icons/gr";
 
 const Game = () => {
 
@@ -43,12 +43,21 @@ const Game = () => {
         }
     }, [board]);
 
+    const finalResult = () => {
+        if (winner.winner === 'X') {
+            return 'Winner is X'
+        } else if (winner.winner === 'O') {
+            return 'Winner is O'
+        } else {
+            return 'Draw'
+        }
+    }
+
     const handleClick = (id) => {
-        if(winner || board[id]) return;
+        if (winner || board[id]) return;
         const value = isXNext ? 'X' : 'O';
         const addValue = board.map((item, index) =>
             index === id ? value : item
-
         )
         setBoard(addValue)
         setIsXNext(!isXNext)
@@ -66,19 +75,19 @@ const Game = () => {
             <div className="score">
                 <p className='p1-win'>X: <b>{countX}</b></p>
                 <p className='p2-win'>0: <b>{countO}</b></p>
-                <button onClick={resetGame}><GrPowerReset />sz</button>
+                <button onClick={resetGame}><GrPowerReset/>sz</button>
             </div>
 
             <div>
-            <Board
-                board={board}
-                handleClick={handleClick}
-                reset={reset}
-                winner={winner}
-            />
+                <Board
+                    board={board}
+                    handleClick={handleClick}
+                    reset={reset}
+                    winner={winner}
+                />
             </div>
 
-            <p className='winner'>{winner ? 'Winner is ' + winner.winner : null}</p>
+            <p className='winner'>{winner ? finalResult() : null}</p>
 
 
         </div>
