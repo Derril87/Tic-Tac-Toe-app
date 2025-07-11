@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/tic-tac-toe-facultative/static/css/main.c90bee2b.css",
+    "main.js": "/tic-tac-toe-facultative/static/js/main.641845c8.js",
+    "index.html": "/tic-tac-toe-facultative/index.html",
+    "main.c90bee2b.css.map": "/tic-tac-toe-facultative/static/css/main.c90bee2b.css.map",
+    "main.641845c8.js.map": "/tic-tac-toe-facultative/static/js/main.641845c8.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c90bee2b.css",
+    "static/js/main.641845c8.js"
+  ]
+}
